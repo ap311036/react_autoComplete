@@ -1,0 +1,50 @@
+@import "../core/core/mixins";
+@import "../core/core/variables";
+
+$classname: 'nvb_rslb';
+// 編譯後的CSS所在位置，如果你的CSS有需要讀圖檔或字型，請在URL字串前加上'#{$resource-path}'
+$resource-path: resource-path($classname);
+// -------------------------------------
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+.#{$classname} {
+	height: 100%;
+	width: 100%;
+    display: block;
+    transition-duration: 300ms;
+	position: fixed;
+	overflow: hidden;
+	overflow-y: auto;
+	background: #fff;
+	-webkit-overflow-scrolling: touch;
+	top: 0;
+    z-index: 10;
+    box-shadow: inset -1px 0px 1px #c2c1b9;
+	& + button[type="button"]{
+		width: 100%;
+    	margin: auto;
+	}
+	&[direction=left] {
+		transform: translate(-100%, 0px);
+		left: 0;
+	}
+	&[direction=right] {
+		transform: translate(100%, 0px);
+		right: 0;
+	}
+	&.active{
+        display: block;
+        transition-duration: 300ms;
+        transform: translate(0%, 0px);
+	}
+	&_modifier {
+		
+	}
+	& > .#{$classname}_child {
+		
+	}
+	& .#{$classname}_descendant {
+
+	}
+}

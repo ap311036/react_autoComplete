@@ -1,0 +1,157 @@
+// -------------------------------------
+// Susy Import
+// -------------------------------------
+//@import "susy";
+// -------------------------------------
+// Core Mixins
+// -------------------------------------
+// @import "../core/core/mixins";
+// -------------------------------------
+// Variables Import
+// -------------------------------------
+// 載入全域變數
+@import "../core/core/variables";
+// -------------------------------------
+// Components / Modules Setting
+// -------------------------------------
+// 請輸入您的ClassName
+$classname: 'st_rcln';
+// 編譯後的CSS所在位置，如果你的CSS有需要讀圖檔或字型，請在URL字串前加上'#{$resource-path}'
+$resource-path: resource-path($classname);
+// -------------------------------------
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+$optionHoverBackgroundColor: #f1f1f1;
+$optionBackgroundColor: white;
+$selectDefaultBackgroundColor: #f9f9f9; //     @media (min-width: $screen-desktop) {}
+.#{$classname} {
+    position: relative;
+    outline: none;
+    &:after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 6px;
+        line-height: normal;
+        content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAPCAYAAAA71pVKAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6ODE5NERBRjA0OTkxMTFFNjg0QTQ4NTE0NzI4QTdBMjQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6ODE5NERBRjE0OTkxMTFFNjg0QTQ4NTE0NzI4QTdBMjQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4MTk0REFFRTQ5OTExMUU2ODRBNDg1MTQ3MjhBN0EyNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4MTk0REFFRjQ5OTExMUU2ODRBNDg1MTQ3MjhBN0EyNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pq/a9ZsAAABESURBVHjaYvz//z8DuYCJgQIwRDWzIHPS09MJht7MmTMZsdqMLEFII1Zn4zIAmzgTMQpxGYgvwJgJeYVxNIWRBgACDAAgvhawKrV4/AAAAABJRU5ErkJggg=='); // background: white;
+    }
+    &.disabled {
+        .dropdown-place-holder {
+            background-color: #f1f1f1;
+            cursor: no-drop;
+            user-select: none;
+        }
+    }
+    .ic_rcln {
+        // float: left;
+        position: absolute;
+        font-size: 22px;
+        line-height: 50px;
+        padding: 0 10px 0 10px;
+        color: #c3cad3;
+    }
+    .real-select {
+        // background-color: black;
+        display: inline-block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        opacity: 0;
+        option {
+            border-bottom: none;
+        }
+        @media (min-width: $screen-tablet) {
+            display: none;
+        }
+    }
+    .dropdown-place-holder {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        color: #aaa;
+        padding: 0px 6px;
+        padding-right: 22px;
+        font-size: 16px;
+        height: 40px;
+        border: solid 1px #ddd;
+        cursor: pointer;
+        line-height: 38px;
+        input {
+            border: none;
+            outline: none;
+            padding: 0;
+            width: 83%;
+            color: black; // z-index: 1;
+            // position: absolute;
+            flex: 1;
+            &::placeholder {
+                color: #aaa;
+            }
+        }
+        &.selected {
+            color: black;
+        }
+        &.breakline {
+            flex-direction: column;
+            height: 50px;
+            line-height: 22px;
+            padding: 1px 5px;
+        }
+        &.withIcon {
+            padding-left: 37px;
+        }
+    }
+    &.action .dropdown-content {
+        display: block;
+    }
+    &.action .dropdown-place-holder {
+        background-color: white;
+        border: 1px #69c1a8 solid;
+    }
+    &.success .dropdown-place-holder {
+        border: 1px #69c1a8 solid;
+    }
+    &.error .dropdown-place-holder {
+        border: 1px #e10500 solid;
+    }
+    & .dropdown-label {
+        margin-right: 20px;
+        color: #aaa;
+        &.breakline {
+            display: block;
+        }
+    }
+    & .req:after {
+        content: "*";
+        display: inline-block;
+        color: #e10500;
+        vertical-align: middle;
+        margin-top: 4px;
+        line-height: 1;
+    }
+}
+
+.dropdown-content {
+    position: absolute;
+    background-color: $optionBackgroundColor;
+    min-width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 9998;
+}
+
+.dropdown-content span {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content span:hover {
+    background-color: $optionHoverBackgroundColor;
+}

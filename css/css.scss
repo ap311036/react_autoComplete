@@ -1,0 +1,368 @@
+
+@import "../components/core/core/variables";
+@import "../components/core/core/mixins";
+@import "./preview";
+//面板可能共用的css放這
+
+$SelectedFontColor: #0077b3;
+$flight_theme_pink: #ff615d;
+$flight_icon_gray:  #c3cad3;
+$bordergray: #ddd;
+
+html{
+    touch-action: manipulation;
+}
+//大陸機票
+.chinaPanel_inputUI{
+    // input{
+    //     font-size: 14px !important;
+    // }
+    .fz-SelectedFontColor label{
+        font-size: 14px;
+        line-height: 26px;
+    }
+    // .int_rcln_calender label{
+    //     line-height: 26px;
+    // }
+}
+.p-t8b6{
+    padding: 8px 6px  !important;
+}
+
+//台灣國內機票start
+
+.bor-solid-1{
+    border:1px solid #ddd;
+}
+.bor-solid-right{
+    border-right:1px solid #ddd;
+}
+
+.bg-lightPink{
+    background-color: #ff615d;
+}
+
+.tips{
+    top: 3px;
+    right: 10%;
+    color: #bbb;
+}
+.taiwan_content{
+    display: flex;
+    .taiwan_left{
+        display: flex;
+        flex: 1 1 0px;
+        .content_left{
+            flex: 1 1 0px;
+            .strcln_destination{
+                flex:1 1 200px;
+            }
+            .PC-calendar{
+                flex: 1 1 270px;
+            }
+            .tripOne{
+                flex: 1 1 135px;
+            }
+
+        }
+        .people{
+            // flex: 1 1 165px;
+            width: 165px;
+        }
+     
+    }
+    .bt_rcnb{
+        padding: 2px 6px;
+        height: 50px;
+        i{
+            font-size:30px;
+        }
+    }
+}
+
+
+//M版月曆input
+.tripControl{
+    position: relative;
+    width: 50%;
+    padding: 0 5px;
+    min-height: 1px;
+    float: left;
+    &.oneWay{
+        width: 100%;
+    }
+    .M-calendar{   
+        height: 48px;
+        > label{
+            // padding-left: 5px;
+            font-size: 16px;
+            &:after{
+                margin-left: 5px;
+            }
+        }
+        > input{
+            // padding-left: 10px !important;  
+            font-size: 16px;
+            color: $SelectedFontColor;
+        }
+        > i{
+            color: $flight_icon_gray;
+        }
+    }
+}
+//PC版月曆input
+.PC-calendar{
+    .int_rcln_calender{
+        label{
+            top:2px;
+        }
+    }
+    .cy_rnmb_search_panel_border{
+        margin:5px 0;
+    }
+}
+
+
+
+
+.fz-SelectedFontColor{
+    input{
+        color: $SelectedFontColor;
+        &::placeholder{
+            color: #aaa; 
+        }
+    }
+
+}
+.label-fz-smd{
+    max-height: 50px;
+    label{
+        font-size: 14px;
+    }
+    input{
+        font-size: 16px;
+    }
+}
+.child-dp-inblock{
+    &>div{
+        float: left;
+        vertical-align: top;
+    }
+}
+.pc_child_p_ab{
+    position: relative;
+    .st_rnls_descendant_content{
+        position: absolute;
+        z-index: 10;
+    }
+}
+
+.strcln_destination {
+    .req {
+        &:after {
+            margin-left: 5px;
+        }
+    }
+    .dropdown-place-holder {
+        span{
+            @media (min-width: 980px){
+                font-size: 14px;
+            }
+        }
+        &.selected {
+            color: $SelectedFontColor;
+        }
+        &.withIcon{
+            padding-left: 37px;
+        }
+    }
+}
+
+//側開內容中的頭尾
+.customChild_wFull{
+    .st_rnls_descendant_custom_content{
+        width: 100%;
+    }
+}
+
+//M版NAV 
+
+.nav{
+    height: 100%;
+    .nvb-header{
+        position: relative;
+        display: table;
+        width: 100%;
+        height: 47px;
+        background: #f2f0e5;
+        border-bottom: 2px solid #dfdcce;
+        text-align: center;
+        vertical-align: middle;
+        color: #e10500;
+        &.fixed{
+            // position: fixed;
+            position: sticky;
+            top: 0;
+            z-index: 9999;
+            left: 0;
+            right: 0;
+        }
+        .column{
+            display: table-cell;
+            vertical-align: middle;
+            &.w42{
+                width: 42px;
+            }
+            i{
+                display: inline-block;
+                vertical-align: middle;
+                cursor: pointer;
+                color: #e10500;
+                font-size: 36px;
+            }
+        }
+    }
+    .nvb-body{
+        // padding-top: 47px;
+        margin-right: auto;
+        margin-left: auto;
+        // padding-left: 5px;
+        // padding-right: 5px;
+        max-width: 1200px;
+        height: 100%;
+        padding-bottom: 50px;
+        overflow-y: auto;
+        .nvb-calendar{
+            height: 100%;
+            .labelBox{
+                position: fixed;
+                right: 0;
+                // top: 50px;
+                background-color: #fff;
+            }
+            .weekdayName{
+                padding-top:55px;
+            }
+            .dateBox{
+                margin-bottom: 130px;
+            }
+        }
+    }
+    .nvb-footer{
+        height: 50px;
+        width: 100%;
+        text-align: center;
+        background: #f6f6f6;
+        border-top: 1px solid #e3e3e3;
+        padding: 9px 0;
+        &.fixed{
+            // position: fixed;
+            position: sticky;
+            bottom: 0;
+            z-index: 9999;
+            left: 0;
+        }
+        .nvb-btn{
+            min-width: 77px;
+            min-height: 31px;
+            color: #fff;
+            background: #e10500;
+            border: none;
+            border-radius: 7px;
+            font-family: Verdana,Arial,\\5FAE\8EDF\6B63\9ED1\9AD4,Microsoft JhengHei,\\5FAE\8EDF\96C5\9ED1\9AD4,Microsoft YaHei;
+            font-size: 14px;
+            padding: 2px 8px;
+            margin: 0 10px;
+            &.gray{
+                background: #bbb;
+            }
+        }
+    }
+}
+
+.int-p-l-7em{
+    >.int_rcln_input{
+        padding-left: 7em;
+    }
+}
+.int-p-l-6em{
+    >.int_rcln_input{
+        padding-left: 6em !important;
+    }
+}
+
+.int-p-l-86{
+    >.int_rcln_input{
+        padding-left: 86px;
+    }
+}
+
+.attr-title{
+    position: relative;
+    &::before{
+        content: attr(title)"\FF1A";
+        display: inline-block;
+        position: absolute;
+        left: 0;    
+    }
+}
+
+.w-75p{
+    width: 75%;
+}
+.w-95p{
+    width: 95%;
+}
+
+.marginLeftRight5 {
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.marginLeft7 {
+    margin-left: 7px;
+}
+
+.marginLeft30 {
+    margin-left: 30px;
+}
+
+.paddingTopBottom20 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.marginTop10 {
+    margin-top: 10px;
+}
+
+.fontSize20 {
+    font-size: 20px;
+}
+
+.textAlignCenter {
+    text-align: center;
+}
+
+.underLine {
+    text-decoration: underline;
+}
+
+@media (max-width: 980px){
+    select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] { font-size: 16px; }   
+    //pc版月曆挑整高度
+    .PC-calendar{
+        div.cy_rnmb_search_panel{
+            height: 50px; 
+            .cy_rnmb_search_panel_icon{
+                color: $flight_icon_gray;
+            }
+            .int_rcln_calender{
+                height: 45px;
+                >input{
+                    padding-top: 27px;
+                }
+            }
+        } 
+    }
+}

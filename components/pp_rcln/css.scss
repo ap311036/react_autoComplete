@@ -1,0 +1,122 @@
+/**
+ * Import core mixins, variables, or others
+ */
+
+@import "../core/core/mixins";
+@import "../core/core/variables";
+/**
+  * Define your classname
+  */
+
+$classname: 'pp_rcln';
+$theme_color_gray: #ccc; // style on phone device
+$theme_color_white: #fff;
+/*
+  * Start your css code
+  */
+// 下方客製組件區塊
+.pp_rcln_main_content {
+	display: none;
+	position: absolute;
+	border: 1px solid $theme_color_gray;
+	background-color: $theme_color_white;
+	padding: 10px 15px;
+	outline: none;
+	word-wrap: break-word;
+	margin-right:10px;
+	z-index: 2;
+	// z-index: 1;
+	&.open {
+		display: block;
+	}
+}
+
+// arrow 設定
+@mixin makeArrow() {
+	width: 0;
+	height: 0;
+	position: absolute;
+	transform: translateX(-50%);
+}
+
+.pp_rcln_main_content_arrow {
+	@include makeArrow();
+	border: 10px solid transparent;
+	z-index: 1; // arrow 基本設定
+	&:after {
+		content: '';
+		display: block;
+		@include makeArrow();
+		top: 0;
+		left: 0;
+		border: 10px solid transparent;
+		z-index: 999;
+	}
+	&.top {
+		top: 100%;
+		// left: 0%;
+		border-top-color: $theme_color_gray;
+		transform: translate(0%, 0%);
+		&:after {
+			border-top-color: $theme_color_white;
+			transform: translate(-50%, -58%);
+		}
+		&.horizon_left{}
+		&.horizon_center {}
+		&.horizon_right {}
+	}
+	&.bottom {
+		bottom: 100%;
+		// left: 50%;
+		border-bottom-color: $theme_color_gray;
+		transform: translate(0%, 0%);
+		&:after {
+			border-bottom-color: $theme_color_white;
+			transform: translate(-50%, -43%);
+		}
+	}
+	&.left {
+		// top: 50%;
+		// transform: translate(-40%, -50%);
+		left: 100%;
+		border-left-color: $theme_color_gray;
+		transform: translate(0%, 0%);
+		&:after {
+			border-left-color: $theme_color_white;
+			transform: translate(-60%, -50%);
+		}
+	}
+	&.right {
+		right: 100%;
+		border-right-color: $theme_color_gray;
+		transform: translate(0%, 0%);
+		&:after {
+			border-right-color: $theme_color_white;
+			transform: translate(-40%, -50%);
+		}
+	} 
+}
+
+
+.#{$classname} {
+	& {
+		position: relative;
+		display: inline-block;
+	} 
+	// 上方客製組件區塊
+	.pp_rcln_custom_content {
+		display: inline-block;
+		// padding: 5px;
+		outline: none;		
+		position: relative;
+		z-index: 2;
+		.pp_rcln_main_content_arrow{
+			display: none;
+		}
+		&.open{
+			.pp_rcln_main_content_arrow {
+				display: block;
+			}
+		}
+	}
+}

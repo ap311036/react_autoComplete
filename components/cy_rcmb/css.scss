@@ -1,0 +1,199 @@
+// -------------------------------------
+// Susy Import
+// -------------------------------------
+//@import "susy";
+// -------------------------------------
+// Core Mixins
+// -------------------------------------
+@import "../core/core/mixins";
+// -------------------------------------
+// Variables Import
+// -------------------------------------
+// 載入全域變數
+@import "../core/core/variables";
+// -------------------------------------
+// Components / Modules Setting
+// -------------------------------------
+// 請輸入您的ClassName
+$classname: 'cy_rcmb';
+// 編譯後的CSS所在位置，如果你的CSS有需要讀圖檔或字型，請在URL字串前加上'#{$resource-path}'
+$resource-path: resource-path($classname);
+// -------------------------------------
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+
+$color01: #e10500;
+$color02: #666666;
+$color03: #ff8b88;
+$color04: #999999;
+
+.#{$classname} {
+	> .labelBox {
+        display: flex;
+		width: 100%;
+		border-bottom: 1px solid $light-gray-light;
+		&.haveAmount {
+			> .label {
+				width: calc(50% - 3em);
+				max-width: calc(50% - 3em);
+				&.amount {
+					width: 5em;
+					padding: 0 5px;
+					> span {
+						font-size: 14px;
+					}
+				}
+			}
+		}
+		> .label {
+			width: calc(50% - 0.5em);
+			max-width: calc(50% - 0.5em);
+			padding: 0 10px;
+			&.active {
+				position: relative;
+				&:after {
+					position: absolute;
+					left: 0;
+					bottom: -1px;
+					content: '';
+					width: 100%;
+					display: block;
+					border-bottom: 3px solid $color01;
+				}
+			}
+			> p {
+        		margin: 0;
+        		padding-top: 2px;
+        		color: $color04;
+        	}
+        	> span{
+				display: block;
+				height: 27px;
+				padding-bottom: 3px;
+				font-size: $font-size-base;
+				line-height: 24px;
+				
+			}
+		}
+		> .middle {
+			color: #999;
+			padding-top: 18px;
+			text-align: center;
+            align-self: center;
+			width: 1em;
+		}
+	}
+	> .weekdayName {
+		& {
+			padding: 0 10px;
+			background-color: $light-gray-lighter;
+		}
+		> ul {
+			& {
+				display: table;
+				width: 100%;
+				list-style: none;
+				font-size: 0;
+				padding: 0;
+				margin: 0;
+			}
+			> li {
+				display: table-cell;
+				width: 14.285%;
+				height: 35px;
+				&.txtRed {
+					color: $color01;
+				}
+				> span {
+					display: block;
+					font-size: $font-size-base;
+					line-height: 35px;
+					text-align: center;
+				}
+			}
+		}
+	}
+	> .dateBox {
+		& {
+			padding: 0 10px;
+		}
+		> table {
+			& {
+				width: 100%;
+			}
+			> thead {
+				th {
+					&.yearMonth {
+						margin: 0;
+						padding: 7px 0 3px;
+						font-size: $font-size-base;
+						text-align: center;
+						line-height: 30px;
+					}
+				}
+			}
+			> tbody {
+				td {
+					& {
+						display: table-cell;
+						width: 14.285%;
+						height: 35px;
+						margin-bottom: 3px;
+					}
+					&.date {
+						& {
+							
+						}
+						&.disabled {
+							> span {
+								color: #ccc;
+							}
+						}
+						&.holiday {
+							> span {
+								color: $color01;
+							}
+						}
+						&.today {
+							> span {
+							color: $color01;
+							}
+						}
+						&.start {
+							> span {
+							color: $body-bg;
+							background-color: $color01;
+							}
+						}
+						&.between{
+							> span {
+							color: $body-bg;
+							background-color: $color03;
+							}
+						}
+						&.end {
+							> span {
+							color: $body-bg;
+							background-color: $color01;
+							}
+						}
+						&.selected {
+							> span {
+							color: $body-bg;
+							background-color: $color01;
+							}
+						}
+					}
+					> span {
+						display: block;
+						line-height: 35px;
+						text-align: center;
+						color: $color02;
+						cursor: pointer;
+					}
+				}
+			}
+		}
+	}
+}

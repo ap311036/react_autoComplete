@@ -1,0 +1,70 @@
+/**
+ * Import core mixins, variables, or others
+ */
+ @import "../core/core/mixins";
+ @import "../core/core/variables";
+ /**
+  * Define your classname
+  */
+ $classname: 'clp_rcdp';
+ /*
+  * Start your css code
+  */
+ .#{$classname} {
+	$theme_color_gray: #ddd;
+	&{
+		overflow: hidden;
+	}
+	// 本層打開
+	&.open{
+		.clp_rcdp_title_text{
+			.clp_rcdp_title_text_arrow{
+				transform: translateY(3px) rotateZ(180deg)
+			}
+		}
+
+		.clp_rcdp_content{
+			&{
+                display: block;
+			}
+		}
+
+	}
+	// 標題 
+	.clp_rcdp_title_text{
+		display: inline-block;
+		position: relative;
+		font-size: 16px;
+		cursor: pointer;
+		user-select: none;
+		.clp_rcdp_title_text_arrow{
+			display: inline-block;
+			width: 0;
+			height: 0;
+			margin-right: 5px;
+			border: 6px solid transparent;
+			border-top-color: #000;
+			transition: transform 0.3s;
+			transform: translateY(3px);
+			transform-origin: 50% 30%;
+		}
+		// 底線
+		&.under_line{
+			text-decoration: underline;
+		}
+	}
+    // 內容
+    .clp_rcdp_content{
+        &{display: none;}
+    }
+	// .clp_rcdp_content{
+	// 	// 本層以及底下所有孩子都要收合高度
+	// 	// 不然外層收起來內層還會有高度
+	// 	&{
+	// 		transition: max-height .3s ease;
+	// 		width: 100%;
+	// 		max-height: 0px;
+	// 	}
+	// }
+
+ }

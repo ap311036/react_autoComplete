@@ -1,0 +1,82 @@
+{
+    "destinations": [
+        {
+            "Code": "NL_MST",
+            "Name": "馬斯垂克(MAASTRICHT) MST-荷蘭",
+            "Kind": "10",
+            "KindName": "城市"
+        },
+        {
+            "Code": "NL_HAG",
+            "Name": "海牙(DEN HAAG) HAG-荷蘭",
+            "Kind": "10",
+            "KindName": "城市"
+        },
+        {
+            "Code": "NL_HRM",
+            "Name": "HAARLEM() HRM-荷蘭",
+            "Kind": "18",
+            "KindName": "區域"
+        },
+        {
+            "Code": "DK_AAL",
+            "Name": "AALBORG() AAL-丹麥",
+            "Kind": "18",
+            "KindName": "區域"
+        },
+        {
+            "Code": "DK_AAR",
+            "Name": "AARHUS() AAR-丹麥",
+            "Kind": "18",
+            "KindName": "區域"
+        },
+        {
+            "Code": "SL_D",
+            "Name": "士林區 ShilinDist",
+            "Kind": "85",
+            "KindName": "行政區"
+        },
+        {
+            "Code": "NH_D",
+            "Name": "內湖區 Neihu District",
+            "Kind": "85",
+            "KindName": "行政區"
+        },
+        {
+            "Code": "DE_AAH",
+            "Name": "AACHEN( 阿亨) AAH-德國",
+            "Kind": "84",
+            "KindName": "商圈"
+        },
+        {
+            "Code": "JP_KOK",
+            "Name": "北安曇郡-長野縣(KITAAZUMI GUN) KOK-日本",
+            "Kind": "84",
+            "KindName": "商圈"
+        },
+        {
+            "Code": "MRT_R",
+            "Name": "淡水線 Red Line",
+            "Kind": "80",
+            "KindName": "捷運"
+        },
+        {
+            "Code": "MRT_BR",
+            "Name": "文湖線 Brow Line",
+            "Kind": "80",
+            "KindName": "捷運"
+        },
+        {
+            "Code": "JP_GAA",
+            "Name": "男鹿市-秋田縣(OGA SHI) GAA-日本",
+            "Kind": "90",
+            "KindName": "飯店"
+        },
+        {
+            "Code": "TH_HHQ_00000119",
+            "Name": "CERA RESORT CHAAM(CERA RESORT CHAAM)",
+            "Kind": "90",
+            "KindName": "飯店"
+        }
+    ]
+}

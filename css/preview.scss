@@ -1,0 +1,365 @@
+//面板可能共用的css放這
+$SelectedFontColor: #0077b3;
+$PanelBgColor: #002f48;
+$SectionBg: #f4f4f4;
+$greenText: #24a07d;
+.hotel_container {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: $PanelBgColor;
+    margin: 0px -5px;
+    padding: 0px 5px;
+    overflow: hidden;
+}
+
+.displayFlex {
+    display: flex;
+}
+
+.whiteFontColor {
+    color: white;
+}
+
+.userCursorPointer {
+    cursor: pointer;
+}
+
+.crrcln_custom {
+    >span:nth-child(2) {
+        background-color: white;
+    }
+    >span:nth-child(3) {
+        color: white;
+    }
+}
+
+.strcln_destination {
+    .req {
+        &:after {
+            margin-left: 5px;
+        }
+    }
+    .dropdown-place-holder {
+        // font-size: 14px;
+        &.selected {
+            color: $SelectedFontColor;
+        }
+    }
+}
+
+.bg-lightPink {
+    background-color: #ff615d;
+}
+
+.intrcln_destination,
+.intrcln_room_days,
+.intrcln_room_people {
+    font-size: 16px;
+    // font-size: 14px; 
+    &.request>label:after {
+        margin-left: 5px;
+    }
+    input {
+        color: $SelectedFontColor;
+        font-size: 16px;
+    }
+}
+
+.customAct {
+    box-shadow: none;
+    position: unset;
+    border: none;
+    padding: 0;
+}
+
+.destination_body {
+    .destination_body_nav {
+        background: $SectionBg;
+        padding: 10px 5px;
+        .destination_body_nav_notice {
+            padding-top: 5px;
+            color: $greenText;
+        }
+    }
+    .destination_body_select {
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-top: 60px !important;
+            padding-bottom: 60px !important;
+            text-align: center;
+            &:before {
+                content: '';
+                width: 35px;
+                height: 40px;
+                margin-right: 5px;
+                display: inline-block;
+                background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDBweCIgIGhlaWdodD0iNDBweCIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0ibGRzLWZhY2Vib29rIiBzdHlsZT0iYmFja2dyb3VuZDogbm9uZTsiPiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngxfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzF9fSIgeD0iMTkiIHk9IjIzLjQ4NzIiIHdpZHRoPSIxMiIgaGVpZ2h0PSI1My4wMjU1IiBmaWxsPSIjZTNlM2UzIj4gICAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ5IiBjYWxjTW9kZT0ic3BsaW5lIiB2YWx1ZXM9IjE4OzMwOzMwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49Ii0wLjJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImhlaWdodCIgY2FsY01vZGU9InNwbGluZSIgdmFsdWVzPSI2NDs0MDs0MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMSIga2V5U3BsaW5lcz0iMCAwLjUgMC41IDE7MCAwLjUgMC41IDEiIGJlZ2luPSItMC4ycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4gICAgPC9yZWN0PiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngyfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzJ9fSIgeD0iNDQiIHk9IjMwIiB3aWR0aD0iMTIiIGhlaWdodD0iNDAiIGZpbGw9IiNkOWQ5ZDkiPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIGNhbGNNb2RlPSJzcGxpbmUiIHZhbHVlcz0iMjAuOTk5OTk5OTk5OTk5OTk2OzMwOzMwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49Ii0wLjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImhlaWdodCIgY2FsY01vZGU9InNwbGluZSIgdmFsdWVzPSI1OC4wMDAwMDAwMDAwMDAwMTs0MDs0MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMSIga2V5U3BsaW5lcz0iMCAwLjUgMC41IDE7MCAwLjUgMC41IDEiIGJlZ2luPSItMC4xcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4gICAgPC9yZWN0PiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngzfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzN9fSIgeD0iNjkiIHk9IjMwIiB3aWR0aD0iMTIiIGhlaWdodD0iNDAiIGZpbGw9IiNDMEMwQzAiPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIGNhbGNNb2RlPSJzcGxpbmUiIHZhbHVlcz0iMjQ7MzA7MzAiIGtleVRpbWVzPSIwOzAuNTsxIiBkdXI9IjEiIGtleVNwbGluZXM9IjAgMC41IDAuNSAxOzAgMC41IDAuNSAxIiBiZWdpbj0iMHMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+ICAgICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iaGVpZ2h0IiBjYWxjTW9kZT0ic3BsaW5lIiB2YWx1ZXM9IjUyOzQwOzQwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICA8L3JlY3Q+ICA8L3N2Zz4=);
+            }
+        }
+    }
+}
+
+.roomPeople_body {
+    .roomPeople_body_nav {
+        background: $SectionBg;
+        padding: 10px 5px;
+    }
+    .roomPeople_body_select {
+        padding: 15px 5px;
+        border-bottom: 1px dashed #dddddd;
+    }
+    .roomPeople_body_room {
+        .roomPeople_body_count {
+            display: flex;
+            align-items: center;
+            padding: 15px 10px;
+            border-bottom: 1px dashed #dddddd;
+            .num {
+                width: 20px;
+                height: 20px;
+                background-color: #e4e1d0;
+                margin-right: 7px;
+                text-align: center;
+            }
+            .people {
+                .adult {
+                    margin-bottom: 15px;
+                }
+                .child {
+                    .age {
+                        width: 80px;
+                        margin-top: 15px;
+                        margin-left: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .roomPeople_warningText {
+        padding: 15px 5px 0 5px;
+        color: $greenText;
+    }
+}
+
+.hotel_pc{
+    $theme_color_blue: #2e8fc0;
+    display: flex;
+    align-items: flex-start;
+    padding: 20px 15px;
+    background-color: rgba(#000, .5);
+    // default style
+    // icon color
+    .int_rcln.icon,.cy_rnmb_search_panel{
+        i.ic_rcln {
+            color: #c3cad3;
+        }
+    }
+    // button左邊panel
+    .hotel_pc_info_panel {
+        flex-grow: 1;
+    }
+    .hotel_pc_top{
+        display: flex;
+        align-items: stretch;
+        margin-bottom: 15px;
+        .int_rcln{
+            input {
+                width: 100%;
+                color: $theme_color_blue;
+                font-size: 16px;
+                &::placeholder {
+                    color: $theme_color_blue;
+                }
+                &:empty{
+                    &::placeholder{
+                        color:#acacac;
+                    }
+                }
+            }
+            label {
+                top :3px;
+            }
+        }
+        
+        > div {
+            flex-shrink: 1;
+            + div{
+                margin-left: 5px;
+            }   
+        }
+
+        .hotel_pc_place, .hotel_pc_people_count{
+            flex: 0 0 238px;
+            @media (min-width: $screen-lg-desktop) {
+                flex: 0 0 255px;
+            }
+        }
+        .hotel_pc_order_dates{
+            flex-grow: 1;
+        }
+
+        .hotel_pc_place{
+            font-weight: 700;
+            .hotel_container {
+                background-color: transparent;
+            }
+            .destination_body {
+                .destination_body_nav {
+                    margin-right: 0;
+                    margin-left: 0;
+                    padding: 0;
+                }
+            }
+        }
+
+        .hotel_pc_cy_rnmb {
+            .cy_rnmb_search_panel{
+                .int_rcln_calender_night {
+                    padding-bottom: 3px !important;
+                    font-weight: normal;
+                }
+
+                &.doubleWay {
+                    input {
+                        font-weight: normal;
+                    }
+                }
+            }   
+        }
+        
+    }
+
+    .hotel_pc_bottom{
+        display: flex;
+        flex: 77px;
+        color: #fff;
+        justify-content: space-between;
+        font-size: 16px;
+        .hotel_pc_order_link{
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            user-select: none;
+            span{
+                text-decoration: underline;
+            }
+            i{
+                margin-right: 5px;
+            }
+        }
+    }
+
+    .hotel_pc_search_button{
+        margin-left: 5px;
+        i.ic_rcln.ic_rcln {
+            font-size: 30px;
+        }
+
+        button.bt_rcnb {
+            flex: 75px;
+            min-height: 50px;
+            background-color: #ff615d;
+        }
+    }
+}
+// pc loading畫面
+.hotel_pc_act_rajx_load_img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:before {
+        content: '';
+        display: inline-block;
+        width: 45px;
+        height: 40px;
+        // margin-right: 15px;
+        background-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDBweCIgIGhlaWdodD0iNDBweCIgIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89InhNaWRZTWlkIiBjbGFzcz0ibGRzLWZhY2Vib29rIiBzdHlsZT0iYmFja2dyb3VuZDogbm9uZTsiPiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngxfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzF9fSIgeD0iMTkiIHk9IjIzLjQ4NzIiIHdpZHRoPSIxMiIgaGVpZ2h0PSI1My4wMjU1IiBmaWxsPSIjZTNlM2UzIj4gICAgICA8YW5pbWF0ZSBhdHRyaWJ1dGVOYW1lPSJ5IiBjYWxjTW9kZT0ic3BsaW5lIiB2YWx1ZXM9IjE4OzMwOzMwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49Ii0wLjJzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImhlaWdodCIgY2FsY01vZGU9InNwbGluZSIgdmFsdWVzPSI2NDs0MDs0MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMSIga2V5U3BsaW5lcz0iMCAwLjUgMC41IDE7MCAwLjUgMC41IDEiIGJlZ2luPSItMC4ycyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4gICAgPC9yZWN0PiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngyfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzJ9fSIgeD0iNDQiIHk9IjMwIiB3aWR0aD0iMTIiIGhlaWdodD0iNDAiIGZpbGw9IiNkOWQ5ZDkiPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIGNhbGNNb2RlPSJzcGxpbmUiIHZhbHVlcz0iMjAuOTk5OTk5OTk5OTk5OTk2OzMwOzMwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49Ii0wLjFzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9ImhlaWdodCIgY2FsY01vZGU9InNwbGluZSIgdmFsdWVzPSI1OC4wMDAwMDAwMDAwMDAwMTs0MDs0MCIga2V5VGltZXM9IjA7MC41OzEiIGR1cj0iMSIga2V5U3BsaW5lcz0iMCAwLjUgMC41IDE7MCAwLjUgMC41IDEiIGJlZ2luPSItMC4xcyIgcmVwZWF0Q291bnQ9ImluZGVmaW5pdGUiPjwvYW5pbWF0ZT4gICAgPC9yZWN0PiAgICA8cmVjdCBuZy1hdHRyLXg9Int7Y29uZmlnLngzfX0iIG5nLWF0dHIteT0ie3tjb25maWcueX19IiBuZy1hdHRyLXdpZHRoPSJ7e2NvbmZpZy53aWR0aH19IiBuZy1hdHRyLWhlaWdodD0ie3tjb25maWcuaGVpZ2h0fX0iIG5nLWF0dHItZmlsbD0ie3tjb25maWcuYzN9fSIgeD0iNjkiIHk9IjMwIiB3aWR0aD0iMTIiIGhlaWdodD0iNDAiIGZpbGw9IiNDMEMwQzAiPiAgICAgIDxhbmltYXRlIGF0dHJpYnV0ZU5hbWU9InkiIGNhbGNNb2RlPSJzcGxpbmUiIHZhbHVlcz0iMjQ7MzA7MzAiIGtleVRpbWVzPSIwOzAuNTsxIiBkdXI9IjEiIGtleVNwbGluZXM9IjAgMC41IDAuNSAxOzAgMC41IDAuNSAxIiBiZWdpbj0iMHMiIHJlcGVhdENvdW50PSJpbmRlZmluaXRlIj48L2FuaW1hdGU+ICAgICAgPGFuaW1hdGUgYXR0cmlidXRlTmFtZT0iaGVpZ2h0IiBjYWxjTW9kZT0ic3BsaW5lIiB2YWx1ZXM9IjUyOzQwOzQwIiBrZXlUaW1lcz0iMDswLjU7MSIgZHVyPSIxIiBrZXlTcGxpbmVzPSIwIDAuNSAwLjUgMTswIDAuNSAwLjUgMSIgYmVnaW49IjBzIiByZXBlYXRDb3VudD0iaW5kZWZpbml0ZSI+PC9hbmltYXRlPiAgICA8L3JlY3Q+ICA8L3N2Zz4=);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: 50%;
+    }
+}
+
+// 彈跳視窗
+.hotel_pc_dropdown_content {
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+// 間數人數彈掉視窗
+.st_rnls_people_container {
+    padding: 15px 10px;
+    transform: translateX(-57.5%);
+    ul{
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+    .st_rnls_room_count {
+        display: inline-block;
+        min-width: 226px;
+    }
+
+    // 下拉選單下方資料
+    ul.st_rnls_room_info_list{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin-top: 15px;
+        > li {
+            display: flex;
+            margin-bottom: 15px;
+        }
+        .room_info_list_num{
+            
+            align-self: center;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e4e1d0;
+            align-self: flex-start;
+            margin-top: 5px;
+        }
+
+        .room_info_list_people_count{
+            margin-left: 10px;
+            label {
+                margin-right: 5px;
+            }
+        }
+    }
+    // 小孩歲數選單{ text: '12歲', value: 12 },
+    ul.room_info_list_children_age{
+        display: inline-flex;
+        justify-content: space-evenly;
+        flex-grow: 1;
+        padding-left: 10px;
+        li{
+            flex: 0 1 1;
+            + li {
+                padding-left: 5px;
+            }
+            .st_rcln .dropdown-place-holder{
+                height: 30px;
+                min-width: 78px;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+            }
+                
+        }
+    }
+    // debug
+    // display: block !important;
+}
+
+// 補字模組下拉視窗
+.hotel_container_autotext{
+    z-index: 10;
+}

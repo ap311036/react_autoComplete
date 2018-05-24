@@ -1,0 +1,208 @@
+// -------------------------------------
+// Susy Import
+// -------------------------------------
+// @import "../../../lib/susy/sass/susy";
+// -------------------------------------
+// Core Mixins
+// -------------------------------------
+@import "../core/core/mixins";
+// -------------------------------------
+// Variables Import
+// -------------------------------------
+// 載入全域變數
+@import "../core/core/variables";
+// -------------------------------------
+// Susy 設定載入
+// -------------------------------------
+@import "../core/core/susy-config";
+// -------------------------------------
+// Components / Modules Setting
+// -------------------------------------
+// 請輸入您的ClassName
+$classname: 'dtm_rcln';
+// 您的CSS Code
+// -------------------------------------
+//以下範例可以刪除，改為您自已的CSS Code
+$theme_red:#e10500;
+$theme_red_light:#ff625d;
+
+$theme_green: #23a17c;
+
+.#{$classname} {
+    border: 1px solid #bbb;
+    background: white;
+    position: absolute;
+    @include box-shadow(0 1px 3px rgba(0,0,0, 0.25));
+    font-size: 12px;
+    padding: 5px 10px;
+    outline: none;
+    display: none;
+    z-index: 500;
+    a{cursor: pointer;}
+    &.open{display: block;}
+    >.dtm_label{
+        color: $theme_green;
+        font-family: '新細明體';
+        margin-bottom: 0;
+    }
+    >.close_btn{
+        position: absolute;
+        right: -1px;
+        top: -1px;
+        border: 1px solid #bbbbbb;
+        background-color: white;
+        background-image: none;
+        padding: 1px 2px;
+        font-size: 15px;
+        line-height: 15px;
+        font-weight: bold;
+        cursor: pointer;
+        &:hover,
+        &:focus,
+        &:active {
+            color: $theme_red;
+        }
+    }
+    .sec-all {
+        display: inline-block;
+        padding: 4px;
+        margin: 5px -4px;
+        font-weight: bold;
+        color: #666;
+        &.hide {
+            display: none;
+        }
+        &.selected {
+            color: white;
+            background-color: $theme_red_light;
+        }
+        &:hover,
+        &:focus,
+        &:active {
+            text-decoration: none;
+            color: white;
+            background-color: $theme_red_light;
+        }
+    }
+    .sec-all:not(.hide) + .sec-wrap{
+        border-top: 1px dashed #dedede;
+    }
+    .sec-wrap{
+        width: 100%;
+        border-top: 1px dashed #dedede;
+        padding: 5px 0 10px;
+        &:first-of-type{
+            border-top:none;
+        }
+        >a:after,span:after{
+            content: "：";
+            display: inline;
+            text-decoration: none;
+        }
+        >a{
+            color: #999;
+            padding: 4px;
+            margin: 0 -4px 3px;
+            font-weight: bold;
+            display: inline-block;
+            &.selected {
+                color: white;
+                background-color: $theme_red_light;
+            }
+            &:hover,
+            &:focus,
+            &:active {
+                text-decoration: none;
+                color: white;
+                background-color: $theme_red_light;
+            }
+        }
+        >span{
+            display: inline-block;
+            color: #999;
+            padding: 7px 0;
+        }
+    }
+    .sec-wrap.inline {
+        display: table;
+        width: 100%;
+        > a {
+            display: table-cell;
+            width: 9em;
+            vertical-align: middle;
+            text-align: right;
+            color: #444;
+            // text-decoration: underline;
+        }
+        > a {
+            &.selected,
+            &:hover,
+            &:focus,
+            &:active {
+                color: #fff;
+                text-decoration: none;
+                color: white;
+                background-color: $theme_red_light;
+            }
+        }
+        > ul {
+            display: table-cell;
+            vertical-align: middle;
+            > li {
+                width: 12*6+8px;
+            }
+        }
+        .icon {
+            display: none;
+        }
+        &:first-child {
+            border-top: none;
+        }
+    }
+    .last_menu {
+        padding: 0;
+        margin: 0 -4px;
+        list-style: none;
+        width:auto;
+        @include clearfix;
+        > li {
+            display: block;
+            float: left;
+            min-width: 25%;
+            width: 12*10+8px;
+            padding: 3px 0;
+            > a {
+                color: #444;
+                text-decoration: none;
+                padding: 4px;
+                display: inline-block;
+                &.selected,
+                &:hover {
+                    color: white;
+                    background-color: $theme_red_light;
+                }
+            }
+            > a.disable{
+                color:#999;
+                background-color: transparent;
+            }
+        }
+        > li:nth-child(4n+1) {
+            clear: left;
+        }
+    }
+    &.isMobile{
+        border: none;
+        position: unset;
+        box-shadow: none;
+        padding: 5px 0px;
+        z-index: unset;
+        .sec-wrap, .sec-all, .last_menu{
+            font-size: 14px;
+        }
+    }
+}
+
+.noTab.ntb_rcln{
+    >.tabs{display: none;}
+}

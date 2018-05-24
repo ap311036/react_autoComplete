@@ -1,0 +1,58 @@
+/**
+ * Import core mixins, variables, or others
+ */
+ @import "../core/core/mixins";
+ @import "../core/core/variables";
+ /**
+  * Define your classname
+  */
+ $classname: 'st_rnls';
+ /*
+  * Start your css code
+  */
+ .#{$classname} {
+
+	 // style on phone device
+	 @media screen and (min-width: $screen-tablet) {
+		 // style on tablet device
+	 }
+	 @media screen and (min-width: $screen-desktop) {
+		 // style on desktop device
+	 }
+	 @media screen and (min-width: $screen-lg-desktop) {
+		 // style on desktop device
+	 }
+	 
+ }
+
+//  content
+.#{$classname}_descendant_content{
+
+	$theme_color_gray: #ddd;
+	
+	display: none;
+	position: relative;
+	min-height: 30px;
+	border: 1px solid $theme_color_gray;
+	padding: 15px 20px;
+	background-color: #fff;
+	outline: none;
+	word-wrap: break-word;
+	z-index: 1;
+
+	&.active{
+		display: block;
+	}
+}
+//custom_content
+.#{$classname}_descendant_custom_content {
+	outline: none;
+}
+
+// close
+.#{$classname}_descendant_content_close{
+	position: absolute;
+	right: 10px;
+	top: 5px;
+	cursor: pointer;
+}
